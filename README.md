@@ -22,7 +22,7 @@ SCM (Smart Contact Management) is a web-based application that allows users to m
 ## Setup Instructions
 
 ### Clone the Repository
-git clone https://github.com/satvikdoshi/SCM-Smart-Contact-Management.git
+git clone https://github.com/satvikdoshi/SCM-Smart-Contact-Management-.git
 cd SCM-Smart-Contact-Management
 
 
