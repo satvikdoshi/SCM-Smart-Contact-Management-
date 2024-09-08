@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" class="light" xmlns:th="https://www.thymeleaf.org" th:fragment="parent(content,title)">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" data-th-href="@{/css/output.css}">
+    <!-- flowbite  -->
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
+
+    <!-- font awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" data-th-href="@{/css/style.css}">
+    <title th:replace="${title}"></title>
+</head>
+
+<body class="h-screen w-full dark:bg-gray-900 dark:text-white">
+
+    <!-- common header -->
+
+    <!-- if user is logged in | navbar  -->
+    <div data-th-if="${loggedUser}">
+        <div data-th-replace="~{user/user_navbar::user-navbar}"></div>
+    </div>
+
+
+
+    <!-- if user is not logged in | navbar  -->
+    <div data-th-unless="${loggedUser}">
+        <div data-th-replace="~{navbar :: navbar}"></div>
+    </div>
+
+
+    <!-- main content  -->
+    <div class="p-4">
+        <section data-th-replace="${content}"></section>
+    </div>
+
+    <!-- common footer -->
+    <footer class="p-4">
+        <!-- <p>Happy SpringBoot</p> -->
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="
+    https://cdn.jsdelivr.net/npm/@linways/table-to-excel@1.0.4/dist/tableToExcel.min.js
+    "></script>
+    <script data-th-src="@{/js/script.js}"></script>
+
+</body>
+
+</html>
